@@ -14,7 +14,7 @@ public class ComparadorDeAluno implements Comparator<String> {
         // if (comparacao < 0) return -1;
         // if (comparacao > 0) return 1;
         // return 0;
-
+        
         return o1.compareToIgnoreCase(o2);
     }
     
