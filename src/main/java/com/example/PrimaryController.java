@@ -39,15 +39,12 @@ public class PrimaryController {
         // txtAlunos.setText(txtAlunos.getText() + "\n" + nome);
         // txtAlunos.appendText(txtNome.getText() + "\n");
         
-        //ANONYMOUS CLASS
+        //LAMBDA EXPRESSION / ARROW FUNCTION
         nomes.sort(
-            new Comparator<String>() {
-                @Override 
-                public int compare(String o1, String o2) { 
-                    return o1.compareToIgnoreCase(o2); 
-                } 
-            } 
-        );
+            (String o1, String o2) -> {
+                return o1.compareToIgnoreCase(o2);
+            }
+        ); 
         
         txtAlunos.clear();
         for (String aluno : nomes) { //Para cada aluno dentro de nomes append do aluno
