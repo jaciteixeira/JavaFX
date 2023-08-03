@@ -2,7 +2,6 @@ package com.example;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Comparator;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -34,17 +33,8 @@ public class PrimaryController {
     }
 
     public void mostrarAlunos(){
-        // String nome = txtNome.getText();
-        // txtAlunos.setText(nome);
-        // txtAlunos.setText(txtAlunos.getText() + "\n" + nome);
-        // txtAlunos.appendText(txtNome.getText() + "\n");
-        
-        //LAMBDA EXPRESSION / ARROW FUNCTION
-        nomes.sort(
-            (String o1, String o2) -> {
-                return o1.compareToIgnoreCase(o2);
-            }
-        ); 
+
+        nomes.sort((o1,o2) ->  o1.compareToIgnoreCase(o2));
         
         txtAlunos.clear();
         for (String aluno : nomes) { //Para cada aluno dentro de nomes append do aluno
