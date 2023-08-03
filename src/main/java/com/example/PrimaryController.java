@@ -38,6 +38,7 @@ public class PrimaryController {
         // txtAlunos.setText(nome);
         // txtAlunos.setText(txtAlunos.getText() + "\n" + nome);
         // txtAlunos.appendText(txtNome.getText() + "\n");
+        nomes.sort(new ComparadorDeAluno());
         txtAlunos.clear();
         for (String aluno : nomes) { //Para cada aluno dentro de nomes append do aluno
             txtAlunos.appendText(aluno + "\n");
