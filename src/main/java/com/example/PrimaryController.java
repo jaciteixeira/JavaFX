@@ -38,7 +38,17 @@ public class PrimaryController {
         // txtAlunos.setText(nome);
         // txtAlunos.setText(txtAlunos.getText() + "\n" + nome);
         // txtAlunos.appendText(txtNome.getText() + "\n");
-        nomes.sort(new ComparadorDeAluno());
+        
+        //ANONYMOUS CLASS
+        nomes.sort(
+            new Comparator<String>() {
+                @Override 
+                public int compare(String o1, String o2) { 
+                    return o1.compareToIgnoreCase(o2); 
+                } 
+            } 
+        );
+        
         txtAlunos.clear();
         for (String aluno : nomes) { //Para cada aluno dentro de nomes append do aluno
             txtAlunos.appendText(aluno + "\n");
@@ -47,14 +57,4 @@ public class PrimaryController {
         System.out.println(nomes);
     }
 
-}
-
-
-class ComparadorDeAluno implements Comparator<String> {
-
-    @Override
-    public int compare(String o1, String o2) {
-        return o1.compareToIgnoreCase(o2);
-    }
-    
 }
